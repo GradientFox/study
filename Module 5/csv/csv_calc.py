@@ -3,7 +3,7 @@ import csv, os
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def get_data(filename):
-    full_path = SCRIPT_DIR + "\\" + filename
+    full_path = os.path.join(SCRIPT_DIR, filename)
     with open(full_path, encoding='utf-8') as f:
         reader = csv.reader(f)
         temp = []

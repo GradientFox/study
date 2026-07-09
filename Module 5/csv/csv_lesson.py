@@ -1,7 +1,7 @@
 import csv, os
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-full_path = SCRIPT_DIR + "\\данные.csv"
+full_path = os.path.join(SCRIPT_DIR, "данные.csv")
 with open(full_path, encoding="utf-8") as f:
     reader = csv.reader(f)
     for row in reader:
@@ -14,7 +14,7 @@ data = [
     {'Имя': 'Мария', 'Возраст': '28', 'Город': 'Киев'}
 ]
 
-file_name = SCRIPT_DIR + '\\данные_заголовки.csv'
+file_name = os.path.join(SCRIPT_DIR, "данные_заголовки.csv")
 
 with open(file_name, 'w', encoding="utf-8", newline='') as f:
     field_names = data[0].keys()

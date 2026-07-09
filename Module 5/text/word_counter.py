@@ -5,7 +5,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 def get_words(filename):
     translator = str.maketrans('', '', string.punctuation)
     words = list()
-    file_path = SCRIPT_DIR + "\\" + filename
+    file_path = os.path.join(SCRIPT_DIR, filename)
     with open(file_path, 'r', encoding='utf-8') as file:
         for line in file.readlines():
             temp = line.translate(translator)
@@ -15,7 +15,7 @@ def get_words(filename):
 def get_words_dict(words):
     words_dict = dict()
     for word in words:
-        words_dict[word] = words_dict.get(word, 0) + 1
+        words_dict[word.lower()] = words_dict.get(word.lower(), 0) + 1
     return words_dict
 
 file_name = input("Введите название файла(нажмите Enter для значения по умолчанию): ")

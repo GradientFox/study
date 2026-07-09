@@ -4,7 +4,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def get_data(filename):
     response = []
-    full_path = SCRIPT_DIR + "\\" + filename
+    full_path = os.path.join(SCRIPT_DIR, filename)
     with open(full_path, 'r', encoding="utf-8") as f:
         for line in f.readlines():
             response.append(line.strip().split('\t'))
@@ -13,7 +13,7 @@ def get_data(filename):
 def create_csv(data, filename):
     temp = filename.split('.')
     temp[-1] = "csv"
-    full_path = SCRIPT_DIR + "\\" + ".".join(temp)
+    full_path = os.path.join(SCRIPT_DIR, ".".join(temp))
     with open(full_path, 'w', encoding="utf-8", newline='') as f:
         writer = csv.writer(f)
         for row in data:
