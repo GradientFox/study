@@ -17,7 +17,7 @@ from collections import deque
 #     def pop(self):
 #         if self.is_empty():
 #             raise IndexError("Queue is empty")
-#         return self.data.pop()
+#         return self.data.popleft()
     
 #     def clear(self):
 #         self.data.clear()
@@ -26,7 +26,7 @@ def push(data: deque, item):
     data.append(item)
 
 def pop(data: deque):
-    return data.pop()
+    return data.popleft()
 
     
 d = deque()
