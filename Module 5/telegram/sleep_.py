@@ -81,7 +81,7 @@ def waking(message: Message):
     time = datetime.datetime.now()
     start_time = datetime.datetime.strptime(DB[user_id][-1]["start_time"], _DT_DISPLAY)
     delta = time - start_time
-    hours = round(delta.total_seconds() / 1, 2)
+    hours = round(delta.total_seconds() / 3600, 2)
     DB[user_id][-1]["duration"] = hours
     write_json(DB, "data.json")
     bot.send_message(message.chat.id,
