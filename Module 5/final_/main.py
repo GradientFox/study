@@ -21,9 +21,9 @@ def find_student(name, data):
     student = data.get(name.capitalize(), "Студент с таким именем не найден")
     if type(student) is dict:
         print(f"""Имя: {name.capitalize()}
-Возраст: {student["age"]}
-Предметы: {student["subjects"]}
-Оценки: {student["grades"]}""", end="\n\n")
+Возраст: {student['age']}
+Предметы: {student['subjects']}
+Оценки: {student['grades']}""", end="\n\n")
         return
     print(student, end="\n\n")
 
