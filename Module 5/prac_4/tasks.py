@@ -17,7 +17,7 @@ data = [
     (73, 179),
     (76, 184),
 ]
-print(sorted(data, key=lambda item: item[0] / pow(item[1], 2)), end="\n\n")
+print(sorted(data, key=lambda item: item[0] / pow(item[1] / 100, 2)), end="\n\n")
 
 # Задание 3
 students_list = [
